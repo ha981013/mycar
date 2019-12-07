@@ -30,6 +30,7 @@ from donkeycar.parts.behavior import BehaviorPart
 from donkeycar.parts.file_watcher import FileWatcher
 from donkeycar.parts.launch import AiLaunch
 from donkeycar.utils import *
+from donkeypart_ps3_controller import PS3JoystickController
 
 def drive(cfg, model_path=None, use_joystick=False, model_type=None, camera_type='single', meta=[] ):
     '''
@@ -123,7 +124,10 @@ def drive(cfg, model_path=None, use_joystick=False, model_type=None, camera_type
         #modify steering_scale lower than 1.0 to have less responsive steering
         from donkeycar.parts.controller import get_js_controller
         
-        ctr = get_js_controller(cfg)
+        #ctr = get_js_controller(cfg)
+        ctr = PS3JoystickController(
+            throttle_scale=cfg.JOYSTICK_MAX_THROTTLE,
+            steering_scale=cfg.JOYSTICK_STEERING_SCALE, auto_record_on_throttle=cfg.AUTO_RECORD_ON_THROTTLE)
         
         if cfg.USE_NETWORKED_JS:
             from donkeycar.parts.controller import JoyStickSub
