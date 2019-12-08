@@ -41,14 +41,14 @@
 # 
 # #STEERING
 # STEERING_CHANNEL = 1            #channel on the 9685 pwm board 0-15
-# STEERING_LEFT_PWM = 435         #pwm value for full left steering
-# STEERING_RIGHT_PWM = 335        #pwm value for full right steering
+STEERING_LEFT_PWM = 422         #pwm value for full left steering
+STEERING_RIGHT_PWM = 322        #pwm value for full right steering
 # 
 # #THROTTLE
-# THROTTLE_CHANNEL = 0            #channel on the 9685 pwm board 0-15
-# THROTTLE_FORWARD_PWM = 365      #pwm value for max forward throttle
-# THROTTLE_STOPPED_PWM = 345      #pwm value for no movement
-# THROTTLE_REVERSE_PWM = 325      #pwm value for max reverse throttle
+THROTTLE_CHANNEL = 0            #channel on the 9685 pwm board 0-15
+THROTTLE_FORWARD_PWM = 413      #pwm value for max forward throttle
+THROTTLE_STOPPED_PWM = 360      #pwm value for no movement
+THROTTLE_REVERSE_PWM = 305      #pwm value for max reverse throttle
 # 
 # #DC_STEER_THROTTLE with one motor as steering, one as drive
 # #these GPIO pinouts are only used for the DRIVE_TRAIN_TYPE=DC_STEER_THROTTLE
@@ -114,7 +114,7 @@
 # 
 # #JOYSTICK
 # USE_JOYSTICK_AS_DEFAULT = False     #when starting the manage.py, when True, will not require a --js option to use the joystick
-# JOYSTICK_MAX_THROTTLE = 0.3         #this scalar is multiplied with the -1 to 1 throttle value to limit the maximum throttle. This can help if you drop the controller or just don't need the full speed available.
+# JOYSTICK_MAX_THROTTLE = 0.5         #this scalar is multiplied with the -1 to 1 throttle value to limit the maximum throttle. This can help if you drop the controller or just don't need the full speed available.
 # JOYSTICK_STEERING_SCALE = 1.0       #some people want a steering that is less sensitve. This scalar is multiplied with the steering -1 to 1. It can be negative to reverse dir.
 # AUTO_RECORD_ON_THROTTLE = True      #if true, we will record whenever throttle is not zero. if false, you must manually toggle recording with some other trigger. Usually circle button on joystick.
 # CONTROLLER_TYPE='ps3'               #(ps3|ps4|xbox|nimbus|wiiu|F710)
